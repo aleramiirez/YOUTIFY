@@ -1,0 +1,394 @@
+
+body{
+  background: linear-gradient(90deg, rgb(7, 58, 0) 47%, rgba(118, 124, 0, 0.7) 50%, rgb(63, 0, 0) 53%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+h1{
+  font-weight: 1000;
+  color: white;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+#YouTube, #Spotify{
+  width: 50vw;
+}
+
+.login-Spotify{
+  background-color: white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  width: 7rem;
+}
+
+.logout{
+  cursor: pointer;
+  background-color: white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.6rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+}
+
+.login-Spotify:hover, .logout:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: all 0.2s;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+#resultado button{
+  background-color: white;
+  color: black;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border-color: white;
+  border-style: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+#boton-play{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 3rem;
+}
+
+#boton-play:hover,
+#boton-borrar:hover{
+  cursor: pointer;
+  filter: invert(100);
+  transition: all 0.2s;
+}
+
+#YouTube{
+  padding-right: 2rem;
+  padding-left: 10rem;
+}
+
+#lista-resultados{
+  height: 80vh;
+  margin-top: 2rem;
+}
+
+#lista-resultados li{
+  margin-bottom: 3rem;
+}
+
+#lista-resultados li img:hover{
+  cursor: pointer;
+  box-shadow:10px -10px 10px 10px rgba(255,255,255,0.4),
+            -10px -5px 10px 10px rgba(255,255,255,0.4),
+            10px 10px 10px 10px rgba(255,255,255,0.4),
+            -10px 5px 10px 10px rgba(255,255,255,0.4);
+  transition: all 0.2s;
+}
+
+#video {
+  margin-top: 1rem;
+}
+
+#video h2,
+#lista-resultados li h2{
+  color: white;
+}
+
+#boton-borrar{
+  max-height: 5rem;
+  padding: 0.7rem 1rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1rem;
+  position: absolute;
+  right: 3rem;
+  top: 13.6rem;
+  font-weight: bold;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#Logo-Spotify{
+  width: 7rem;
+  margin-bottom: 1rem; 
+  filter: invert(100); 
+}
+
+#Logo-YouTube{
+  width: 7rem;
+  margin-bottom: 1rem;
+  filter: invert(100); 
+}
+
+#resultado li{
+  padding: 0.4rem;
+  margin:0.4rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  max-width: 45vw;
+  color: white;
+}
+
+.floating{
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-direction: normal;
+}
+
+.giro{
+  animation-name: giro;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-direction: normal;
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes giro {
+  from {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(382deg);
+  }
+  30%{
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#buscador-Spotify{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buscador-Spotify div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.3rem;
+  height: 2rem;
+  width: 19rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 3rem;
+}
+
+#buscador-Spotify input{
+  border: none;
+  outline: none;
+  background-color: none;
+  font-size: 1.25rem;
+}
+
+#buscador-Spotify button{
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-right: -0.7rem;
+  border-radius: 3rem;
+  border: none;
+  background: none;
+}
+
+#buscador-Spotify:hover>*,
+#buscador-Spotify:hover>*>input{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: all 0.2s;
+}
+
+#buscador-Spotify:hover svg{
+  cursor: pointer;
+  filter: invert(100);
+  transition: all 0.2s;
+}
+
+#resultado li{
+  margin-right: 5rem;
+  text-align: start;
+}
+
+#resultado li:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#resultados-YouTube{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+@media (max-width: 1092px) {
+  body{
+    background: linear-gradient(0deg, rgb(63, 0, 0) 49%, rgba(118, 124, 0, 0.7) 50%, rgb(7, 58, 0) 51%);
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+  }
+  .App {
+    align-items: center;
+    flex-direction: column;
+  }
+  #Spotify, #YouTube{
+    height: auto;
+    min-height: 100vh;
+    width: 90vw;
+  }
+  #resultado{
+    padding: 0;
+  }
+  #resultado li{
+    min-width: 80vw;
+  }
+  #video{
+    width: 80vw;
+  }
+  #boton-borrar{
+    top:calc(100vh+13.6rem);
+  }
+}
+
+@media (max-width: 576px) {
+  #track{
+    max-width: 50vw;
+  }
+  body{
+    min-width: 100%;
+  }
+  .App {
+    align-items: center;
+    flex-direction: column;
+  }
+  #Spotify, #YouTube{
+    height: 200vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+}
+
+@media (max-width: 320px) {
+  body{
+    min-width: 100%;
+  }
+  .App {
+    align-items: center;
+    flex-direction: column;
+  }
+  #Spotify, #YouTube{
+    height: 200vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #buscador-Spotify input{
+    width: 40vw;
+  }
+  #buscador-Spotify button{
+    width: 12vw;
+  }
+  #track{
+    width: 80%;
+  }
+  #resultado{
+    padding: 0;
+  }
+  #resultado li{
+    min-width: 80vw;
+  }
+}
